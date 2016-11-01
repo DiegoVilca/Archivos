@@ -22,8 +22,19 @@ namespace UIGuardador
         {
             Persona unaPersona = new Persona(txtNombre.Text, txtClave.Text);
             Guardador.GuardarPersona(unaPersona);
+            CargarListado(Guardador.RetornarListado());
+            
         }
 
+        public void CargarListado(List<Persona> listado)
+        {
+            lstListado.Items.Clear();
+
+            foreach (Persona item in listado)
+            {
+                lstListado.Items.Add(item);
+            }
+        }
        
     }
 }

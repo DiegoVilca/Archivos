@@ -18,7 +18,8 @@ namespace EscrituraEnArchivo
             try
             {
                 obj = new StreamWriter("Personas.txt");
-                obj.Write(persona.ToString());
+                obj.WriteLine(persona.ToString());
+                
 
                 bandera = true;
             }
@@ -62,6 +63,41 @@ namespace EscrituraEnArchivo
             }
             
             return nuevaPersona;
+        }
+
+
+        public static List<Persona> RetornarListado()
+        {
+
+            List<Persona> miListado;
+
+            try
+            {
+                miListado = new List<Persona>();
+
+                using (StreamReader lector = new StreamReader("Personas.txt"))
+                {
+                    string renglon;
+                    string[] array;
+
+                    while ((renglon = lector.ReadLine()) != null)
+                    {
+                        array = renglon.Split(',');
+
+                        miListado.Add(new Persona(array[0], array[1]));
+                    }
+
+                }
+
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+
+            return miListado;
+
         }
 
     }

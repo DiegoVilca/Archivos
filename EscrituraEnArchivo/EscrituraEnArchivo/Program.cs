@@ -25,7 +25,7 @@ namespace EscrituraEnArchivo
             Persona unaPersona = new Persona("Diego", "1234");
             Guardador.GuardarPersona(unaPersona);
             Guardador.LeerUnaPersona();
-
+            Guardador.RetornarListado();
 
             Console.ReadKey();
             

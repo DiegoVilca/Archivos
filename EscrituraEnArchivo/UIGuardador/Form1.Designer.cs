@@ -31,6 +31,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtClave = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.lstListado = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -57,11 +58,20 @@
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
+            // lstListado
+            // 
+            this.lstListado.FormattingEnabled = true;
+            this.lstListado.Location = new System.Drawing.Point(233, 56);
+            this.lstListado.Name = "lstListado";
+            this.lstListado.Size = new System.Drawing.Size(132, 147);
+            this.lstListado.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(408, 262);
+            this.Controls.Add(this.lstListado);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtClave);
             this.Controls.Add(this.txtNombre);
@@ -83,6 +93,7 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.ListBox lstListado;
     }
 }
 
