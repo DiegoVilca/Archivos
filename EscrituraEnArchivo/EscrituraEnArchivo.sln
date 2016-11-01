@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscrituraEnArchivo", "EscrituraEnArchivo\EscrituraEnArchivo.csproj", "{A1FC8019-5BBA-4D67-9EDF-5E2EF64B65C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIGuardador", "UIGuardador\UIGuardador.csproj", "{A628C2C9-9001-401E-9F62-9614EEB2AFED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1FC8019-5BBA-4D67-9EDF-5E2EF64B65C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1FC8019-5BBA-4D67-9EDF-5E2EF64B65C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1FC8019-5BBA-4D67-9EDF-5E2EF64B65C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1FC8019-5BBA-4D67-9EDF-5E2EF64B65C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A628C2C9-9001-401E-9F62-9614EEB2AFED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A628C2C9-9001-401E-9F62-9614EEB2AFED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A628C2C9-9001-401E-9F62-9614EEB2AFED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A628C2C9-9001-401E-9F62-9614EEB2AFED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
