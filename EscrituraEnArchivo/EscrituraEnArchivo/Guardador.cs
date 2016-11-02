@@ -10,15 +10,15 @@ namespace EscrituraEnArchivo
     public static class Guardador
     {
         
-        public static bool GuardarPersona(Persona persona)
+        public static bool GuardarPersona(Persona persona)  //Escribo en el archivo
         {
             bool bandera = true;
-            StreamWriter obj = null; //Le asigno null para que en el finally no me salte error
+            StreamWriter escritor = null; //Le asigno null para que en el finally no me salte error "unassigned"
 
             try
             {
-                obj = new StreamWriter("Personas.txt");
-                obj.WriteLine(persona.ToString());
+                escritor = new StreamWriter("Personas.txt", true);  //si paso por parametro true agrego datos a los ya existentes
+                escritor.WriteLine(persona.ToString());              //si agrego false los sobreescribo
                 
 
                 bandera = true;
@@ -30,7 +30,7 @@ namespace EscrituraEnArchivo
             }
             finally
             {
-                obj.Close();
+                escritor.Close();
             }
 
             return bandera;
@@ -38,21 +38,22 @@ namespace EscrituraEnArchivo
 
        
 
-        public static Persona LeerUnaPersona()
+        public static Persona LeerUnaPersona() //Leo un archivo
         {
-            Persona unaPersona = null;
+            
             Persona nuevaPersona = null;
-            StreamReader obj = null;
-            string[] array;
+            StreamReader lector = null;
+            string[] arrayString;
 
             try
             {
-                unaPersona = new Persona("Diego", "4567");
-                obj = new StreamReader("Personas.txt");
+                
+                lector = new StreamReader("Personas.txt");
 
-                string linea = obj.ReadLine();
-                array = linea.Split(',');
-                nuevaPersona = new Persona(array[0], array[1]);
+                string linea = lector.ReadLine();
+                arrayString = linea.Split(',');
+
+                nuevaPersona = new Persona(arrayString[0], arrayString[1]);
                 
 
             }
@@ -60,6 +61,10 @@ namespace EscrituraEnArchivo
             {
                 
                 throw;
+            }
+            finally
+            {
+                lector.Close();
             }
             
             return nuevaPersona;
@@ -75,8 +80,8 @@ namespace EscrituraEnArchivo
             {
                 miListado = new List<Persona>();
 
-                using (StreamReader lector = new StreamReader("Personas.txt"))
-                {
+                using (StreamReader lector = new StreamReader("Personas.txt"))  //Al salir del using el archivo se cierra automaticamente, 
+                {                                                               //sin necesidad de utilizar un finally con un .Close()
                     string renglon;
                     string[] array;
 

@@ -19,13 +19,29 @@ namespace EscrituraEnArchivo
             
 
             StreamReader objStreamR = new StreamReader("Archivo.txt");
-            
+            Console.WriteLine(objStreamR.ReadLine());
             //--------------------------------------------------------
 
-            Persona unaPersona = new Persona("Diego", "1234");
+            /*
+            //Persona unaPersona = new Persona("Diego", "1234");
+            Persona unaPersona = new Persona("Fede", "666");
+
+            Console.WriteLine("\nGuardo una persona");
             Guardador.GuardarPersona(unaPersona);
-            Guardador.LeerUnaPersona();
-            Guardador.RetornarListado();
+
+            Console.WriteLine("Leo la persona");
+            Persona otraPersona = Guardador.LeerUnaPersona();
+            
+            Console.WriteLine(otraPersona);
+            */
+            Console.WriteLine("Retorno listado");
+            List<Persona> Lista = Guardador.RetornarListado();
+
+            foreach (Persona item in Lista)
+            {
+                Console.WriteLine(item);
+            }
+            
 
             Console.ReadKey();
             
